@@ -9,10 +9,8 @@ SoftwareSerial mySerial(10, 11);
 U8GLIB_SSD1306_128X64 oled(U8G_I2C_OPT_NONE);
 
 const int MPU=0x68; 
-int16_t AcX,AcY,AcZ,Tmp,GyX,GyY,GyZ;
-int16_t OriginX;
-int16_t OriginY;
-int16_t OriginZ;
+int16_t AcX,AcY,AcZ,Tmp,GyX,GyY,GyZ,OriginX,OriginY,OriginZ;
+int8_t SizeZ = 10;
 
 void setup() {
   Wire.begin();
@@ -59,12 +57,16 @@ void loop() {
   Serial.print(" | Z = "); Serial.println(GyZ);
   Serial.println(" ");
 
-  //Rita
+  //Draw
   oled.firstPage();
   do {
     draw();
   } while(oled.nextPage());
 
+  //Calculate box representation size
+  if ((AcZ-OriginZ)/1000 + 5 > 5 && (AcZ-OriginZ)/1000 + 5 < 15);
+    SizeZ = (AcZ-OriginZ)/1000 + 5;
+  
   delay(1000);
 
 }
@@ -72,5 +74,6 @@ void loop() {
 void draw() {
   oled.drawStr(10,10,"Hej");
   oled.drawLine(10,10,20,20);
-  oled.drawBox((AcX-OriginX)/1000+64,(AcY-OriginY)/1000+32,5,5);
+  oled.drawBox((AcX-OriginX)/1000+64,(AcY-OriginY)/1000+32,SizeZ,SizeZ);
+  oled.drawCircle(64,32,30);
 }
