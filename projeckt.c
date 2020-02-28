@@ -19,14 +19,45 @@
             //Function: Make temporära position, till current positon och uppdaterar spelplanen.
             //Function: som uppdaterar OLED
             
-        
+/*
+Meny (när man inte är i ett spel)
+
+Vill du starta spelet. Tryck på kanpp 1.
+Vill du starta om spelet. Tryck på knapp 1.
+
+*/
+
+void menu (){
+
+}
+
+/*
+Uppdatera spelplanen.
+
+Hämtar data vart spelaren vill röra sig.
+Subrutin som kollar om det är en krock, om inte.
+Sätter positionen till 000.
+Sätter tidigare position till 255.
+Uppdaterar displayens input.
+*/
+
+void game (){
+    
+}
 
 
 
+/*
+Subrutin, krockhaterare.
 
+Om den nya positionen inte 255 betyder det att vi har hamnat på en krock.
+Här börjar den blinka som fan.
+Fastnar i subrutinen till den lyckas ta sig till ett "leagal" position.
+*/
 
-
-
+void dangerZone (){
+    
+}
 
 
 
