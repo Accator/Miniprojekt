@@ -32,6 +32,22 @@ void menu (){
 }
 
 /*
+Spelet.
+
+
+Functionen kommer ligga i menu. 
+Håll dig innanför ramen och du får poäng.
+Är du utanför mer än 3 sekunder förlorar du.
+Alla spel essentiella funktioner kommer ligg i denna
+
+
+*/
+
+void game (){
+    
+}
+
+/*
 Uppdatera spelplanen.
 
 Hämtar data vart spelaren vill röra sig.
@@ -41,9 +57,12 @@ Sätter tidigare position till 255.
 Uppdaterar displayens input.
 */
 
-void game (){
-    
+void update (){
+
 }
+
+
+
 
 
 
