@@ -1,9 +1,10 @@
+// 1: Koda spelet så det är funktionellt med knapparna.
+
+// 2: Koda så spelet är funktionellt med acc och gyro.
 
 
-
-//Storlekar valda för att underlätta "uppdaterandet" av skärmen.
 //Spelarens storlek är 8x8
-//Spelgrid som är 24 rader och 14 kolumner.
+//Spelplanen 24 rader och 14 kolumner.
 
 
 //Spelet kör i en virutuell spelplan
