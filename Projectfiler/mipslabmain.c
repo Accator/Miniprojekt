@@ -54,11 +54,13 @@ int main(void) {
 	/* SPI2CON bit ON = 1; */
 	SPI2CONSET = 0x8000;
 	
-
+	display_init();
 	display_update();
 	
-	display_image(96, icon);
-	
+	display_image(0, startBox);
+	display_image(32, midBox);
+	display_image(64, midBox);
+	display_image(96, endBox);
 	labinit(); /* Do any lab-specific initialization */
 
 	while( 1 )
