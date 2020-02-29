@@ -15,6 +15,9 @@
 #include "mipslab.h"  /* Declatations for these labs */
 #define ORIGINX 8
 #define ORIGINY 16
+int x = 0;
+int y = 0;
+int alive = 0;
 
 volatile int* _TRISE = (volatile int*)0xbf886100;
 volatile int* _PORTE = (volatile int*)0xbf886110;
