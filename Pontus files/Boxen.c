@@ -1,4 +1,5 @@
-﻿//Bit bas 2 till bas 10, detta är vad displayen läser in. Ser ut som udner i verkligheten.
+﻿//Hejehj
+//Bit bas 2 till bas 10, detta är vad displayen läser in. Ser ut som udner i verkligheten.
 //Eftersom det är en array kan vi uppdatera dem byte vis
 
 
