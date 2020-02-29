@@ -10,6 +10,8 @@
 
 char textbuffer[4][16];
 
+/*
+
 const uint8_t const font[] = {
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
@@ -159,12 +161,12 @@ const uint8_t const icon[] = {
 	132, 59, 192, 27, 164, 74, 177, 70,
 	184, 69, 186, 69, 254, 80, 175, 217,
 };
-
+*/
 //Bit bas 2 till bas 10, detta är vad displayen läser in. Ser ut som udner i verkligheten.
 //Eftersom det är en array kan vi uppdatera dem byte vis
 
 
-const uint8_t box[] = {
+const uint8_t icon[] = {
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
@@ -240,7 +242,7 @@ const uint8_t box[] = {
 
 //Bit bas 2 till bas 10, detta är vad displayen läser in. Ser ut som ovan i verkligheten.
 //Eftersom det är en array kan vi uppdatera dem byte vis
-
+/*
 const uint8_t const boxBlink[] = {
 000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,
 000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,
@@ -311,7 +313,7 @@ const uint8_t box[] = {
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
 };
-
+ */
 //Bit reprensation
 
 /*
@@ -353,7 +355,7 @@ const uint8_t box[] = {
 
 //Bit bas 2 till bas 10, detta är vad displayen läser in. Ser ut som ovan i verkligheten.
 //Eftersom det är en array kan vi uppdatera dem byte vis
-
+/*
 const uint8_t const boxBlink[] = {
 000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,
 000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,
@@ -387,4 +389,4 @@ const uint8_t const boxBlink[] = {
 000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,
 000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,
 000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,
-};
+*/

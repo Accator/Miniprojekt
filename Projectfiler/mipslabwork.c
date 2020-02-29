@@ -16,17 +16,6 @@
 //#define ORIGINX 8
 //#define ORIGINY 16
 
-int x1 = 8; //Declares x variable
-int *x; // Declares x1 pointer
-x = &x1;
-
-int y1 = 16; //Declares y variable
-int *y; // Declares y1 pointer
-y = &y1;
-
-int alive1 = 1; //Declares alive variable
-int *alive; // Declares alive1 pointer
-alive = &alive1;
 
 
 /*
@@ -66,7 +55,7 @@ void labinit( void )
 
 
 
-void updateGameState(int btns){
+void updateGameState(int btns, int *x,int *y,int *alive){
 	if (btns == 1){
 		(*x)++;
 	}
@@ -82,18 +71,31 @@ void updateGameState(int btns){
 	if (*x >= 16|| *x <= 0|| *y >= 32|| *y <= 0){
 		(*alive) = 0;
 	}
+}
 void game(){
+	int x1 = 8; //Declares x variable
+	int *x; // Declares x1 pointer
+	x = &x1;
+
+	int y1 = 16; //Declares y variable
+	int* y; // Declares y1 pointer
+	y = &y1;
+
+	int alive1 = 1; //Declares alive variable
+	int* alive; // Declares alive1 pointer
+	alive = &alive1;
+
 	while (alive) {
 		//Få in knapptryck
-		btns = getbtns();
+		int btns = getbtns();
 		//Kolla om spelaren ska flytta sig, om spelaren dött etc
-		updateGameState(btns);
+		updateGameState(btns,x ,y ,alive);
 		//Rita på displayen
 		draw();
 		delay(200);
 	}
 }
-int main2(argc, const char *argv[]) {
+int main2() {
 	//Display "Are you ready?"
 	game();
 	//Display "Play again?"
