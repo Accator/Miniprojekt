@@ -58,8 +58,8 @@ int main(void) {
 	display_update();
 	
 	display_image(0, startBox);
-	display_image(32, midBox);
-	display_image(64, midBox);
+	display_image(32, midBoxOne);
+	display_image(64, midBoxTwo);
 	display_image(96, endBox);
 	labinit(); /* Do any lab-specific initialization */
 
