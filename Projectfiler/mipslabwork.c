@@ -89,16 +89,16 @@ void setPixel(int x, int y) {
 	//pixeln kopieras in på båda
 	switch (box) {
 		case 0:
-			startBox[block*32+kollumn] -= pow(2,row);
+			startBox[block*32+kollumn] | 1 << row;
 			break;
 		case 1:
-			midBoxOne[block*32+kollumn] -= pow(2,row);
+			midBoxOne[block*32+kollumn] | 1 << row;
 			break;
 		case 2:
-			midBoxTwo[block*32+kollumn] -= pow(2,row);
+			midBoxTwo[block*32+kollumn] | 1 << row;
 			break;
 		case 3:
-			endBox[block*32+kollumn] -= pow(2,row);
+			endBox[block*32+kollumn] | 1 << row;
 			break;
 	}
 }
