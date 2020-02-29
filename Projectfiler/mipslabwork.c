@@ -59,15 +59,24 @@ void draw(){
 
 void updateGameState(int btns, int btns1, int *x,int *y,int *alive){
 	if (btns1 == 1){
+		display_string(2,"hej 1");
+		display_update();
 		(*x)++;
 	}
-	if (btns == 2){
+	if (btns == 1){
+		display_string(2,"hej 2");
+		display_update();
 		(*x)--;
 	}
-	if (btns == 3){
+	if (btns == 2){
 		(*y)++;
+		display_string(2,"hej 3");
+		display_update();
+
 	}
 	if (btns == 4){
+		display_string(2,"hej 4");
+		display_update();
 		(*y)--;
 	}
 	if (*x >= 16|| *x <= 0|| *y >= 32|| *y <= 0){
@@ -95,7 +104,7 @@ void game(){
 		updateGameState(btns,btns1,x ,y ,alive);
 		//Rita på displayen
 		draw();
-		delay(200);
+		delay(10);
 	}
 }
 int main2() {
