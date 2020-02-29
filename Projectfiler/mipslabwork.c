@@ -13,11 +13,32 @@
 #include <stdint.h>   /* Declarations of uint_32 and the like */
 #include <pic32mx.h>  /* Declarations of system-specific addresses etc */
 #include "mipslab.h"  /* Declatations for these labs */
-#define ORIGINX 8
-#define ORIGINY 16
-int x = 0;
-int y = 0;
-int alive = 0;
+//#define ORIGINX 8
+//#define ORIGINY 16
+
+int x1 = 8; //Declares x variable
+int *x; // Declares x1 pointer
+x = &x1;
+
+int y1 = 16; //Declares y variable
+int *y; // Declares y1 pointer
+y = &y1;
+
+int alive1 = 1; //Declares alive variable
+int *alive; // Declares alive1 pointer
+alive = &alive1;
+
+
+/*
+int *alive;
+&alive = 1;
+
+int *x;
+&x = ORIGINX;
+
+int *y;
+&y = ORIGINY;
+*/
 
 volatile int* _TRISE = (volatile int*)0xbf886100;
 volatile int* _PORTE = (volatile int*)0xbf886110;
@@ -41,31 +62,27 @@ void labinit( void )
 }
 
 /* This function is called repetitively from the main program */
-void labwork( void )
-{
-  main2();
-
-}
 
 
-int main2(argc, const char *argv[]) {
-	//Display "Are you ready?"
-	game();
-	//Display "Play again?"
-	return 1;
-}
+
+
+void updateGameState(int btns){
+	if (btns == 1){
+		(*x)++;
+	}
+	if (btns == 2){
+		(*x)--;
+	}
+	if (btns == 3){
+		(*y)++;
+	}
+	if (btns == 4){
+		(*y)--;
+	}
+	if (*x >= 16|| *x <= 0|| *y >= 32|| *y <= 0){
+		(*alive) = 0;
+	}
 void game(){
-	//Om spelaren lever 1, om inte 0
-	int *alive;
-	*alive = 1;
-	//Spelarens position i x-led
-	int *x;
-	*x = ORIGINX;
-	//Spelarens position i y-led
-	int *y;
-	*y = ORIGINY;
-	int btns;
-
 	while (alive) {
 		//Få in knapptryck
 		btns = getbtns();
@@ -76,25 +93,17 @@ void game(){
 		delay(200);
 	}
 }
-void updateGameState(int btns){
-	if (btns == 1){
-		*x++;
-	}
-	if (btns == 2){
-		*x--;
-	}
-	if (btns == 3){
-		*y++;
-	}
-	if (btns == 4){
-		*y--;
-	}
-	if (*x >= 16|| *x <= 0|| *y >= 32|| *y <= 0){
-		*alive = 0;
-	}
+int main2(argc, const char *argv[]) {
+	//Display "Are you ready?"
+	game();
+	//Display "Play again?"
+	return 1;
 }
-void draw(){
-	
+
+void labwork( void )
+{
+  main2();
+
 }
 
 
