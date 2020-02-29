@@ -13,6 +13,8 @@
 #include <stdint.h>   /* Declarations of uint_32 and the like */
 #include <pic32mx.h>  /* Declarations of system-specific addresses etc */
 #include "mipslab.h"  /* Declatations for these labs */
+#define ORIGINX 8
+#define ORIGINY 16
 
 volatile int* _TRISE = (volatile int*)0xbf886100;
 volatile int* _PORTE = (volatile int*)0xbf886110;
