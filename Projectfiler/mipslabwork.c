@@ -88,7 +88,7 @@ void setPixel(int x, int y) {
 	int row = y%8-1;
 	//Vi kommer behöva två midBox:es, annars kommer
 	//pixeln kopieras in på båda
-	switch (box) {
+	switch (startBox,midBoxOne,midBoxTwo,endBox) {
 		case 0:
 			startBox[block*32+kollumn] | 1 << row;
 			break;
@@ -121,6 +121,7 @@ void game(){
 		//Få in knapptryck
 		int btns = getbtns432();
 		int btns1 = getbtns1();
+		setPixel();
 		//Kolla om spelaren ska flytta sig, om spelaren dött etc
 		updateGameState(btns,btns1,x ,y ,alive);
 		//Rita på displayen
@@ -131,6 +132,7 @@ void game(){
 int main2() {
 	//Display "Are you ready?"
 	game();
+
 	//Display "Play again?"
 	return 1;
 }
