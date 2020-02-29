@@ -59,30 +59,32 @@ void draw(){
 
 void updateGameState(int btns, int btns1, int *x,int *y,int *alive){
 	if (btns1 == 1){
-		display_string(2,"hej 1");
-		display_update();
+		//display_string(2,"hej 1");
 		(*x)++;
+		display_update();
+		
 	}
 	if (btns == 1){
-		display_string(2,"hej 2");
-		display_update();
+		//display_string(2,"hej 2");
 		(*x)--;
+		display_update();
 	}
 	if (btns == 2){
 		(*y)++;
-		display_string(2,"hej 3");
+		//display_string(2,"hej 3");
 		display_update();
 
 	}
 	if (btns == 4){
-		display_string(2,"hej 4");
-		display_update();
+		//display_string(2,"hej 4");
 		(*y)--;
+		display_update();
 	}
 	if (*x >= 16|| *x <= 0|| *y >= 32|| *y <= 0){
 		(*alive) = 0;
 	}
 }
+
 
 void setPixel(int x, int y) {
 	int box = x/32;
@@ -96,10 +98,10 @@ void setPixel(int x, int y) {
 			startBox[block*32+kollumn] -= pow(2,row);
 			break;
 		case 1:
-			midBox[block*32+kollumn] -= pow(2,row);
+			midBoxOne[block*32+kollumn] -= pow(2,row);
 			break;
 		case 2:
-			midBox[block*32+kollumn] -= pow(2,row);
+			midBoxTwo[block*32+kollumn] -= pow(2,row);
 			break;
 		case 3:
 			endBox[block*32+kollumn] -= pow(2,row);
