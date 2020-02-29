@@ -57,8 +57,8 @@ void draw(){
 }
 
 
-void updateGameState(int btns, int *x,int *y,int *alive){
-	if (btns == 1){
+void updateGameState(int btns, int btns1, int *x,int *y,int *alive){
+	if (btns1 == 1){
 		(*x)++;
 	}
 	if (btns == 2){
@@ -90,8 +90,9 @@ void game(){
 	while (alive) {
 		//Få in knapptryck
 		int btns = getbtns432();
+		int btns1 = getbtns1();
 		//Kolla om spelaren ska flytta sig, om spelaren dött etc
-		updateGameState(btns,x ,y ,alive);
+		updateGameState(btns,btns1,x ,y ,alive);
 		//Rita på displayen
 		draw();
 		delay(200);
