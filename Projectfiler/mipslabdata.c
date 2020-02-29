@@ -164,11 +164,6 @@ const uint8_t const icon[] = {
 //Eftersom det är en array kan vi uppdatera dem byte vis
 
 
-#include <stdint.h>   /* Declarations of uint_32 and the like */
-#include <pic32mx.h>  /* Declarations of system-specific addresses etc */
-#include "mipslab.h"  /* Declatations for these labs */
-
-
 const uint8_t box[] = {
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
