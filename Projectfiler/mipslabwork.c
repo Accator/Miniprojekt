@@ -52,7 +52,9 @@ void labinit( void )
 
 /* This function is called repetitively from the main program */
 
-
+void draw(){
+	
+}
 
 
 void updateGameState(int btns, int *x,int *y,int *alive){
@@ -87,7 +89,7 @@ void game(){
 
 	while (alive) {
 		//Få in knapptryck
-		int btns = getbtns();
+		int btns = getbtns432();
 		//Kolla om spelaren ska flytta sig, om spelaren dött etc
 		updateGameState(btns,x ,y ,alive);
 		//Rita på displayen
