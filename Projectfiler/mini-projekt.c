@@ -5,7 +5,7 @@
 #define ORIGINX 8
 #define ORIGINY 16
 
-int main(argc, const char *argv[]) {
+int main2(argc, const char *argv[]) {
 	//Display "Are you ready?"
 	game();
 	//Display "Play again?"
