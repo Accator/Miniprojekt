@@ -57,7 +57,7 @@ int main(void) {
 
 	display_update();
 	
-	display_image(0, icon);
+	display_image(96, icon);
 	
 	labinit(); /* Do any lab-specific initialization */
 
