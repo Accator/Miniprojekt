@@ -12,5 +12,5 @@ int getbtns432(void) {
 
 
 int getbtns1(void) {
-	return (PORTF >> 5) & 0x7;
+	return PORTF; //första biten
 }
