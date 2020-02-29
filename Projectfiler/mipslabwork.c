@@ -104,7 +104,7 @@ void game(){
 		updateGameState(btns,btns1,x ,y ,alive);
 		//Rita på displayen
 		draw();
-		delay(10);
+		delay(100);
 	}
 }
 int main2() {

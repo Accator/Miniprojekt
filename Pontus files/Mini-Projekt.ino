@@ -67,7 +67,7 @@ void loop() {
   if ((AcZ-OriginZ)/1000 + 5 > 5 && (AcZ-OriginZ)/1000 + 5 < 15);
     SizeZ = (AcZ-OriginZ)/1000 + 5;
   
-  delay(1000);
+  delay(100);
 
 }
 
