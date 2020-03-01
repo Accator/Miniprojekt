@@ -72,46 +72,12 @@ void updateGameState(int btns, int btns1, int* px,int* py,int* pa){
 }
 
 
-void setPixel(int x, int y) {
-	int box = x/32;
-	int block = y/8;
-<<<<<<< HEAD
-	int kollumn = x%32;
-	int row = y%8;
-=======
-	int kollumn = x%32-1;
-	int row = x%8-1;
-	//Vi kommer behöva två midBox:es, annars kommer
-	//pixeln kopieras in på båda
 
 
->>>>>>> b1851fe64d907516b2a6e9abbbfb8d933c7abb49
-	switch (box) {
-		case 0:
-			startBox[block*32+kollumn] | ~(1 << row);
-
-			break;
-		case 1:
-			midBoxOne[block*32+kollumn] | ~(1 << row);
-
-			break;
-		case 2:
-			midBoxTwo[block*32+kollumn] | ~(1 << row);
-			break;
-		case 3:
-			endBox[block*32+kollumn] | ~(1 << row);
-			break;
-<<<<<<< HEAD
-		default:
-			break;
-=======
-
->>>>>>> b1851fe64d907516b2a6e9abbbfb8d933c7abb49
-	}
-}
 
 void game(){
-	int x = 64; //Declares x variable
+	// 0 till 4 positioner
+	int x = 2; //Declares x variable
 	int* px; // Declares x1 pointer
 	px = &x;
 
@@ -123,6 +89,10 @@ void game(){
 	int* pa; // Declares alive1 pointer
 	pa = &alive;
 
+	display_image(0, whiteBox);
+	display_image(32, blackAndWhiteBox);
+	display_image(64, whiteAndBlackBox);
+	display_image(96, blackBox);
 
 	
 
@@ -130,16 +100,6 @@ void game(){
 		//Få in knapptryck
 		int btns = getbtns432();
 		int btns1 = getbtns1();
-		setPixel(*px,*py);
-		//Kolla om spelaren ska flytta sig, om spelaren dött etc
-		updateGameState(btns,btns1, px , py , pa);
-
-		display_image(0, startBox);
-		display_image(32, midBoxOne);
-		display_image(64, midBoxTwo);
-		display_image(96, endBox);
-		delay(1000);
-		
 	}
 }
 

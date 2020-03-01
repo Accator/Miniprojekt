@@ -41,7 +41,10 @@ extern const uint8_t const font[128*8];
 extern uint8_t startBox[128];
 extern uint8_t midBoxOne[128];
 extern uint8_t midBoxTwo[128];
-extern uint8_t endBox[128];
+extern uint8_t whiteBox[128];
+extern uint8_t blackBox[128];
+extern uint8_t whiteAndBlackBox[128];
+extern uint8_t blackAndWhiteBox[128];
 /* Declare text buffer for display output */
 extern char textbuffer[4][16];
 
