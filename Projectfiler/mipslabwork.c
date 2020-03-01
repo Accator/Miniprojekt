@@ -5,7 +5,7 @@
    add comment(s) here with your name(s) and date(s):
    This file modified 2017-04-31 by Ture Teknolog 
    For copyright and licensing, see file COPYING */
-
+#include <stdio.h>
 #include <stdint.h>   /* Declarations of uint_32 and the like */
 #include <pic32mx.h>  /* Declarations of system-specific addresses etc */
 #include "mipslab.h"  /* Declatations for these labs */
@@ -52,31 +52,22 @@ void draw(){
 }
 
 
-void updateGameState(int btns, int btns1, int *x,int *y,int *alive){
+void updateGameState(int btns, int btns1, int* px,int* py,int* pa){
 	if (btns1 == 1){
-		//display_string(2,"hej 1");
-		(*x)++;
-		display_update();
-		
+		*px = *px + 1;		
 	}
 	if (btns == 1){
-		//display_string(2,"hej 2");
-		(*x)--;
-		display_update();
+		*px = *px - 1;
 	}
 	if (btns == 2){
-		(*y)++;
-		//display_string(2,"hej 3");
-		display_update();
-
+		*py = *py + 1;
 	}
 	if (btns == 4){
-		//display_string(2,"hej 4");
-		(*y)--;
-		display_update();
+		*py = *py - 1;
+
 	}
-	if (*x >= 16|| *x <= 0|| *y >= 32|| *y <= 0){
-		(*alive) = 0;
+	if (*px >= 128|| *px <= 0|| *py >= 32|| *py <= 0){
+		*pa = 0;
 	}
 }
 
@@ -84,59 +75,76 @@ void updateGameState(int btns, int btns1, int *x,int *y,int *alive){
 void setPixel(int x, int y) {
 	int box = x/32;
 	int block = y/8;
+<<<<<<< HEAD
 	int kollumn = x%32;
 	int row = y%8;
+=======
+	int kollumn = x%32-1;
+	int row = x%8-1;
+	//Vi kommer behöva två midBox:es, annars kommer
+	//pixeln kopieras in på båda
+
+
+>>>>>>> b1851fe64d907516b2a6e9abbbfb8d933c7abb49
 	switch (box) {
 		case 0:
-			startBox[block*32+kollumn] | 1 << row;
+			startBox[block*32+kollumn] | ~(1 << row);
+
 			break;
 		case 1:
-			midBoxOne[block*32+kollumn] | 1 << row;
+			midBoxOne[block*32+kollumn] | ~(1 << row);
+
 			break;
 		case 2:
-			midBoxTwo[block*32+kollumn] | 1 << row;
+			midBoxTwo[block*32+kollumn] | ~(1 << row);
 			break;
 		case 3:
-			endBox[block*32+kollumn] | 1 << row;
+			endBox[block*32+kollumn] | ~(1 << row);
 			break;
+<<<<<<< HEAD
 		default:
 			break;
+=======
+
+>>>>>>> b1851fe64d907516b2a6e9abbbfb8d933c7abb49
 	}
 }
 
 void game(){
-	int x1 = 8; //Declares x variable
-	int *x; // Declares x1 pointer
-	x = &x1;
+	int x = 64; //Declares x variable
+	int* px; // Declares x1 pointer
+	px = &x;
 
-	int y1 = 16; //Declares y variable
-	int* y; // Declares y1 pointer
-	y = &y1;
+	int y = 16; //Declares y variable
+	int* py; // Declares y1 pointer
+	py = &y;
 
-	int alive1 = 1; //Declares alive variable
-	int* alive; // Declares alive1 pointer
-	alive = &alive1;
+	int alive = 1; //Declares alive variable
+	int* pa; // Declares alive1 pointer
+	pa = &alive;
+
+
+	
 
 	while (alive) {
 		//Få in knapptryck
 		int btns = getbtns432();
 		int btns1 = getbtns1();
+		setPixel(*px,*py);
 		//Kolla om spelaren ska flytta sig, om spelaren dött etc
-		updateGameState(btns,btns1,x ,y ,alive);
-		//Rita på displayen
-		draw();
-		delay(100);
+		updateGameState(btns,btns1, px , py , pa);
+
+		display_image(0, startBox);
+		display_image(32, midBoxOne);
+		display_image(64, midBoxTwo);
+		display_image(96, endBox);
+		delay(1000);
+		
 	}
-}
-int main2() {
-	//Display "Are you ready?"
-	game();
-	//Display "Play again?"
-	return 1;
 }
 
 void labwork( void )
 {
-  main2();
+  game();
 
 }
