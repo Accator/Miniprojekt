@@ -84,10 +84,8 @@ void updateGameState(int btns, int btns1, int *x,int *y,int *alive){
 void setPixel(int x, int y) {
 	int box = x/32;
 	int block = y/8;
-	int kollumn = x%32-1;
-	int row = y%8-1;
-	//Vi kommer behöva två midBox:es, annars kommer
-	//pixeln kopieras in på båda
+	int kollumn = x%32;
+	int row = y%8;
 	switch (box) {
 		case 0:
 			startBox[block*32+kollumn] | 1 << row;
@@ -100,6 +98,8 @@ void setPixel(int x, int y) {
 			break;
 		case 3:
 			endBox[block*32+kollumn] | 1 << row;
+			break;
+		default:
 			break;
 	}
 }
