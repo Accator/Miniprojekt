@@ -133,7 +133,8 @@ void game(){
 	pa = &alive;
 	pmid();
 	int i = 0;
-	static const int array[32] = {2,1,-1,1,-2,1,1,1,-2,1,-1,-1,-1,1,1,-1,1,-1,1,-1,-1,1,1,-1,1,-1,1,-1,-1,1,1,1};
+
+	static const int array[32] = {2,1,2,2,-2,-2,-1,-1,2,1,1,2,2,1,1,-1,1,-1,1,-1,-1,1,1,-1,1,-1,1,-1,-1,1,1,1};
 	while (alive) {
 		//Få in knapptryck
 		int btns = getbtns432();
