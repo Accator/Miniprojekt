@@ -115,6 +115,23 @@ void p5(){
 	display_image(64, blackBox);
 	display_image(96, whiteBox);
 }
+// Highscore list
+void insertHighscore(int t){
+
+
+}
+//Klockan
+void timer(){
+
+
+}
+
+//highscore screen
+void highScoreScree(){
+
+
+}
+
 
 
 
@@ -131,6 +148,7 @@ void game(){
 	int alive = 1; //Declares alive variable
 	int* pa; // Declares alive1 pointer
 	pa = &alive;
+
 	pmid();
 	int i = 0;
 
